@@ -1,0 +1,10 @@
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link, .navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand {
+    color: white;
+}
+.dropdown-item {
+    color: black !important;
+}
+.btn{
+    background-color: blanchedalmond;
+    color: black
+}
