@@ -26,7 +26,7 @@ def crawldata(url):
     return data
 
 def crawlnavbar(url):
-    soup = geturl(url)
+    soup = geturl(url+'1')
     games = soup.find_all('a', class_='menu-item-object-category')
     genre = []
     for game in games:
@@ -57,9 +57,13 @@ def searchcrawl(url):
             pass
     return data
 
-@app.route('/')
-def index(data = crawldata(url), genre = crawlnavbar(url)):
-    return render_template('index.html', data = data, genre = genre)
+@app.route('/', defaults = {'page' : 1})
+@app.route('/<int:page>', methods = ['POST', 'GET'])
+@app.route('/', defaults = {'page' : 1})
+def index(page):
+    data = crawldata(url + 'page/'+str(page))
+    genre = crawlnavbar(url)
+    return render_template('index.html', data = data, genre = genre, page = page)
 
 @app.route('/search', methods = ['POST', 'GET'])
 def search(genre = crawlnavbar(url)):

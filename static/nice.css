@@ -4,7 +4,11 @@
 .dropdown-item {
     color: black !important;
 }
-.btn{
-    background-color: blanchedalmond;
-    color: black
+.button{
+    background-color: white;
+    color: whitesmoke;
+}
+.submit{
+    background-color: white;
+    color: black;
 }
